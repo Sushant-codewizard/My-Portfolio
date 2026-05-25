@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Professional Polish Theme Colors */
+  --color-brand-cyan: #3b82f6;      /* Tailwind Blue 500 */
+  --color-brand-purple: #a855f7;    /* Purple 500 */
+  --color-brand-emerald: #3b82f6;   /* Re-aligning green accents to the professional Blue */
+}
+
+@layer base {
+  body {
+    background-color: #050505; /* Solid Midnight Polish Black */
+    color: #e5e7eb;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #171717;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-purple);
+  }
+}
+
+/* Glassmorphism Classes styled for Professional Polish */
+.glass-panel {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(17, 17, 17, 0.85);
+  border-color: rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px -15px rgba(168, 85, 247, 0.15);
+}
+
+/* Custom Skill Tags */
+.skill-tag {
+  font-family: var(--font-mono);
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+/* Ambient Background Grid */
+.ambient-grid {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Custom 3D perspective styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
